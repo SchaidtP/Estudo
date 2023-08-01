@@ -1,7 +1,9 @@
 package br.com.xavecoding.regesc.service;
 
+import br.com.xavecoding.regesc.orm.Disciplina;
 import br.com.xavecoding.regesc.orm.Professor;
 import br.com.xavecoding.regesc.repository.ProfessorRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,11 +11,13 @@ import java.util.Optional;
 import java.util.Scanner;
 
 @Service
+//@Transactional // Pra quando o fetch = FetchType.LAZY
 public class CrudProfessorService {
 
     @Autowired
     ProfessorRepository professorRepository;
 
+    @Transactional // Pra quando o fetch = FetchType.LAZY
     public void menu(Scanner scanner) {
         Boolean isTrue = true;
 
@@ -24,6 +28,7 @@ public class CrudProfessorService {
             System.out.println("2 - Atualizar um Professor");
             System.out.println("3 - Visualizar todos os Professores");
             System.out.println("4 - Deletar um Professor");
+            System.out.println("5 - Visualizar um Professor");
 
             int opcao = scanner.nextInt();
 
@@ -39,6 +44,9 @@ public class CrudProfessorService {
                     break;
                 case 4:
                     this.deletar(scanner);
+                    break;
+                case 5:
+                    this.visualizarProfessor(scanner);
                     break;
                 default:
                     isTrue = false;
@@ -104,10 +112,34 @@ public class CrudProfessorService {
 
 
     private void deletar(Scanner scanner) {
-        System.out.print("Digite o Id do Professor a ser atualizado: ");
+        System.out.print("Digite o Id do Professor a ser deletado: ");
         Long id = scanner.nextLong();
         this.professorRepository.deleteById(id);  // lançará uma exception se não achar o ID passado na tabela
         System.out.println("Professor Deletado!\n");
     }
 
+
+    @Transactional // Pra quando o fetch = FetchType.LAZY
+    private void visualizarProfessor(Scanner scanner) {
+        System.out.println("Id do Professor: ");
+        Long id = scanner.nextLong();
+
+        Optional<Professor> optional = this.professorRepository.findById(id);
+        if(optional.isPresent()) {
+            Professor professor = optional.get();
+
+            System.out.println("Professor: {");
+            System.out.println("Id: " + professor.getId());
+            System.out.println("Nome: " + professor.getNome());
+            System.out.println("Prontuario: " + professor.getProntuario());
+            System.out.println("Disciplinas: [: ");
+            for (Disciplina disciplina: professor.getDisciplinas()) {
+                System.out.println("\tId: " + disciplina.getId());
+                System.out.println("\tNome: " + disciplina.getNome());
+                System.out.println("\tSemestre: " + disciplina.getSemestre());
+                System.out.println();
+            }
+            System.out.println("]\n}");
+        }
+    }
 }

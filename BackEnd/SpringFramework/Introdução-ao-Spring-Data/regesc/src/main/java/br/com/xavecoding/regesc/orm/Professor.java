@@ -2,6 +2,8 @@ package br.com.xavecoding.regesc.orm;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "professores")
 public class Professor {
@@ -15,6 +17,11 @@ public class Professor {
 
     @Column(nullable = false, unique = true)
     private String prontuario;
+
+    //fetch = FetchType.LAZY é quando o BD não carrega as informações direto e ai tem q usar o @Transactional nas funções q chama ele ou na propria classe
+    //fetch = FetchType.EAGER já carrega as informações e não precisa fazer nada
+    @OneToMany(mappedBy = "professor", fetch = FetchType.LAZY)
+    private List<Disciplina> disciplinas;
 
     public Professor() { }
 
@@ -41,6 +48,14 @@ public class Professor {
 
     public void setProntuario(String prontuario) {
         this.prontuario = prontuario;
+    }
+
+    public List<Disciplina> getDisciplinas() {
+        return disciplinas;
+    }
+
+    public void setDisciplinas(List<Disciplina> disciplinas) {
+        this.disciplinas = disciplinas;
     }
 
     @Override
