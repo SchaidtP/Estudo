@@ -1,14 +1,15 @@
 package br.com.xavecoding.regesc.service;
 
+import br.com.xavecoding.regesc.orm.Aluno;
 import br.com.xavecoding.regesc.orm.Disciplina;
 import br.com.xavecoding.regesc.orm.Professor;
+import br.com.xavecoding.regesc.repository.AlunoRepository;
 import br.com.xavecoding.regesc.repository.DisciplinaRepository;
 import br.com.xavecoding.regesc.repository.ProfessorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-import java.util.Scanner;
+import java.util.*;
 
 @Service
 public class CrudDisciplinaService {
@@ -18,6 +19,9 @@ public class CrudDisciplinaService {
 
     @Autowired
     ProfessorRepository professorRepository;
+
+    @Autowired
+    AlunoRepository alunoRepository;
 
     public void menu(Scanner scanner) {
         Boolean isTrue = true;
@@ -29,6 +33,7 @@ public class CrudDisciplinaService {
             System.out.println("2 - Atualizar uma Disciplina");
             System.out.println("3 - Visualizar todos as Disciplinas");
             System.out.println("4 - Deletar uma Disciplina");
+            System.out.println("5 - Matricular alunos");
 
             int opcao = scanner.nextInt();
 
@@ -44,6 +49,9 @@ public class CrudDisciplinaService {
                     break;
                 case 4:
                     this.deletar(scanner);
+                    break;
+                case 5:
+                    this.matricularAlunos(scanner);
                     break;
                 default:
                     isTrue = false;
@@ -127,5 +135,45 @@ public class CrudDisciplinaService {
         Long id = scanner.nextLong();
         this.disciplinaRepository.deleteById(id);
         System.out.println("Disciplina Deletada!\n");
+    }
+
+    private Set<Aluno> matricular(Scanner scanner) {
+        boolean isTrue = true;
+        Set<Aluno> alunos = new HashSet<>();
+
+        while (isTrue) {
+            System.out.println("Id do aluno a ser matriculado ( digite 0 para sair ): ");
+            Long alunoId = scanner.nextLong();
+
+            if(alunoId > 0) {
+                System.out.println("alunoId: " + alunoId);
+                Optional<Aluno> optional = this.alunoRepository.findById(alunoId);
+                if(optional.isPresent()) {
+                    alunos.add(optional.get());
+                } else {
+                    System.out.println("Nenhum aluno possui o id " + alunoId + "!");
+                }
+            }
+            else {
+                isTrue = false;
+            }
+        }
+        return alunos;
+    }
+
+    private void matricularAlunos(Scanner scanner) {
+        System.out.println("Digite o Id da Disciplina para matricular alunos: ");
+        Long id = scanner.nextLong();
+
+        Optional<Disciplina> optionalDisciplina = this.disciplinaRepository.findById(id);
+
+        if(optionalDisciplina.isPresent()) {
+            Disciplina disciplina = optionalDisciplina.get();
+            Set<Aluno> novosAlunos = this.matricular(scanner);
+            disciplina.getAlunos().addAll(novosAlunos);
+            this.disciplinaRepository.save(disciplina);
+        } else {
+            System.out.println("Nenhum aluno possui o id " + id + "!");
+        }
     }
 }
