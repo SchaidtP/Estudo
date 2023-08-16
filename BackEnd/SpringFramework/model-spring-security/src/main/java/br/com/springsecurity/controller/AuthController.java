@@ -27,25 +27,8 @@ public class AuthController {
         return token;
     }
 
-    @SuppressWarnings("rawtypes")
-    @Operation(summary = "Refresh token for authenticated user and returns a token")
-    @PutMapping(value = "/refresh/{username}")
-    public ResponseEntity refreshToken(@PathVariable("username") String userName,
-                                       @RequestHeader("Authorization") String refreshToken) {
-        if (checkIfParamsIsNotNull(userName, refreshToken)) return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Invalid client request!");
-        var token = authService.refreshToken(userName, refreshToken);
-        if (token == null) return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Invalid client request!");
-        return token;
-    }
-
-    private boolean checkIfParamsIsNotNull(String username, String refreshToken) {
-        return refreshToken == null || refreshToken.isBlank() ||
-                username == null || username.isBlank();
-    }
-
     private boolean checkIfParamsIsNotNull(RequestAccountCredentials data) {
         return data == null || data.getUserName() == null || data.getUserName().isBlank()
                 || data.getPassword() == null || data.getPassword().isBlank();
     }
-
 }

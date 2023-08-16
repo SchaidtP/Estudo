@@ -47,14 +47,4 @@ public class AuthService {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(errorMessage);
         }
     }
-
-    public ResponseEntity<ResponseToken> refreshToken(String userName, String refreshToken) {
-        User user = userRepository.findByUserName(userName);
-        if (user != null) {
-            ResponseToken tokenResponse = tokenProvider.refreshToken(refreshToken);
-            return ResponseEntity.ok(tokenResponse);
-        } else {
-            throw new UsernameNotFoundException("Username " + userName + " not found!");
-        }
-    }
 }

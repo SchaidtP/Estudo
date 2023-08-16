@@ -12,17 +12,15 @@ public class ResponseToken implements Serializable {
     private Date created;
     private Date expiration;
     private String accessToken;
-    private String refreshToken;
 
     public ResponseToken() {}
 
-    public ResponseToken(String userName, Boolean authenticated, Date created, Date expiration, String accessToken, String refreshToken) {
+    public ResponseToken(String userName, Boolean authenticated, Date created, Date expiration, String accessToken) {
         this.userName = userName;
         this.authenticated = authenticated;
         this.created = created;
         this.expiration = expiration;
         this.accessToken = accessToken;
-        this.refreshToken = refreshToken;
     }
 
     public String getUserName() {
@@ -63,13 +61,5 @@ public class ResponseToken implements Serializable {
 
     public void setAccessToken(String accessToken) {
         this.accessToken = accessToken;
-    }
-
-    public String getRefreshToken() {
-        return refreshToken;
-    }
-
-    public void setRefreshToken(String refreshToken) {
-        this.refreshToken = refreshToken;
     }
 }
