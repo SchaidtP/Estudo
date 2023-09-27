@@ -1,0 +1,29 @@
+body {
+    background-color: black;
+    color: white;
+    margin: 0;
+}
+
+.box {
+    box-sizing:border-box;
+    height: 100px;
+    width: 100px;
+    border: 3px solid wheat;
+    padding: 10px;
+    margin: 10px 0px 5px 10px;
+}
+
+.vermelho {
+    background-color: red;
+    margin-top: 0px;
+}
+
+.azul {
+    background-color: blue;
+    margin-bottom: 50px;
+}
+
+.verde {
+    background-color: green;
+    margin-left: 0px;
+}

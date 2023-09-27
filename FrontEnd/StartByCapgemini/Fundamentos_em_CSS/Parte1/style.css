@@ -1,0 +1,38 @@
+@font-face {
+    font-family: alexbrush;
+    src: url(AlexBrush-Regular.ttf);
+}
+
+main {
+    font-size: 1.2rem; 
+}
+
+main p {
+    text-align: start;
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+h2#titulo-primeira-aula {
+    color: blue;
+    text-decoration: underline;
+}
+
+h2#titulo-primeira-aula:hover {
+    cursor: pointer;
+    color: brown;
+}
+
+a:active {
+    color: aqua;
+}
+
+a:visited {
+    color: red;
+}
+
+a:hover {
+    color: blue;
+}

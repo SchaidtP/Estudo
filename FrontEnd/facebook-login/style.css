@@ -1,0 +1,161 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw; /* 100% da largura da tela */
+    height: 100vh; /* 100% da altura da tela */
+    margin: 0;
+    padding: 0;
+    background-color: #e7eaf085;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.borda-titulo {
+    width: 26.5rem;
+    margin-right: 4.5rem;
+    margin-bottom: 7rem;
+}
+
+h1 {
+    color: #1a77f1;
+    font-size: 4rem;
+    margin-bottom: 0rem;
+}
+
+.texto-titulo {
+    font-size: 1.7rem;
+    margin-top: 0.5rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login {
+    height: 22rem;
+    width: 26.5rem;
+    border: 1px solid white;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: 0.5rem;
+    margin-right: 1rem;
+}
+
+form {
+    display: flex;
+    flex-flow: row wrap;
+    flex-direction: column;  
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.8rem;
+}
+
+input, button {
+    margin: 0.4rem;
+    height: 2.9rem;
+    width: 23.5rem;
+    border-radius: 0.3rem;
+    font-size: 1rem;
+}
+
+button {
+    color: white;
+    background-color: #1a77f1;
+    font-weight: bold;
+    font-size: 1.3rem;
+    border: 0px solid white;
+    margin-top: 0.7rem;
+    cursor: pointer;
+}
+
+.user, .password {
+    border: 1px solid rgba(128, 128, 128, 0.308);
+    padding: 0rem 0.5rem;
+    color: black;
+}
+
+.user::placeholder, .password::placeholder {
+    color: rgba(128, 128, 128, 0.651);
+}
+
+.user:focus::placeholder,  .password:focus::placeholder{
+    color: rgba(128, 128, 128, 0.384);
+}
+
+.user:focus, .password:focus {
+    outline: none;
+    border: 1px solid #1a77f1;
+    caret-color: #1a77f1;
+    color: black;
+}
+
+a {
+    text-decoration: none;
+}
+
+.senha-esquecida {
+    color: #0d58b9;
+    font-size: 1.1rem;
+    text-decoration: none;
+    margin-top: 0.5rem;
+}
+
+.linha {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.356);
+    width: 23.5rem;
+    margin-top: 1.3rem;
+}
+
+.nova-conta {
+    background-color: rgb(1, 172, 1);
+    color: white;
+    width: 10rem;
+    padding: 0.9rem;
+    border-radius: 0.3rem;
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 1.3rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in;
+}
+
+.nova-conta:hover {
+    background-color: rgb(0, 146, 0);
+}
+
+.criar-pagina {
+    display: inline-block;
+    margin-top: 1.8rem;
+    width: 25rem;
+    text-align: center;
+}
+
+p a {   
+    color: rgba(0, 0, 0, 0.781);
+    font-weight: bold;
+}
+
+.senha-esquecida:hover, p a:hover {
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 1000px) {
+    .borda-titulo {
+        width: 26.5rem;
+        text-align: center;
+        margin: 0rem;
+        margin-right: 1rem;
+    }
+}
