@@ -1,0 +1,36 @@
+@media only screen and (max-width: 768px) {
+    nav div {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .about {
+        flex-flow: column wrap;
+        align-items: center;
+    }
+
+    .about .text-image {
+        flex: 1;
+        margin-left: 0px;
+    }
+
+    .espacamento {
+        margin: 70px 10px;
+    }
+
+    .menu {
+        flex-flow: column wrap;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .menu .text-image2 {
+        flex: 1;
+        margin-right: 0px;
+    }
+
+    .contact {
+        margin: 0 10px;
+    }
+}
