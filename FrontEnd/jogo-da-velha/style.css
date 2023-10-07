@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+body {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    overflow: hidden;
+}
+
+header {
+    flex: 10%;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+header h1 {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    color: tomato;
+    
+    --x-offset: -0.0625em;
+    --y-offset: 0.0625em;
+    --stroke: 0.025em;
+    --background-color: white;
+    --stroke-color: lightblue;
+    
+    text-shadow: 
+      
+      var(--x-offset)
+      var(--y-offset)
+      0px
+      var(--background-color), 
+      
+      calc( var(--x-offset) - var(--stroke) )
+      calc( var(--y-offset) + var(--stroke) )
+      0px
+      var(--stroke-color);
+    
+}
+
+@supports ( text-shadow: 1px 1px 1px 1px black ) {
+    h1 {
+      text-shadow:
+        
+        var(--x-offset)
+        var(--y-offset)
+        0px
+        0px
+        var(--background-color), 
+        
+        var(--x-offset) 
+        var(--y-offset)
+        var(--stroke)
+        0px
+        var(--stroke-color);
+      
+    }
+}
+
+
+main {
+    flex: 80%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main table {
+    margin: 0;
+}
+
+table td {
+    margin: 0;
+    height: 130px;
+    width: 110px;
+    background-color: tomato;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    padding: 0;
+    font-size: 65px;
+    cursor: pointer;
+}
+
+table td:hover {
+    background-color: red;
+}
+
+.nao-selecionar {
+    cursor: not-allowed;
+}
+
+.nao-selecionar:hover {
+    background-color: tomato;
+}
+
+footer {
+    flex: 10%;
+    display: flex;
+    width: 100%;
+    background-color: tomato;
+    color: white;
+    align-items: center;
+    justify-content: center;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+div {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.432);
+}
+
+div p{
+    text-align: center;
+    color: white;
+    font-size: 38px;
+    background-color: rgba(255, 99, 71, 0.774);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    border-radius: 10px;
+    margin: 3px;
+    padding: 10%;
+    text-shadow: 2px 7px 5px rgba(0,0,0,0.3), 0px -4px 10px rgba(255,255,255,0.3);
+}

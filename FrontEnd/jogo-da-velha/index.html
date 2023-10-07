@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Velha</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Jogo da Velha</h1>
+    </header>
+    
+    <main>
+        <table>
+            <tr>
+                <td id="posicao1" onclick="jogar(0, 0, 'posicao1')"></td>
+                <td id="posicao2" onclick="jogar(0, 1, 'posicao2')"></td>
+                <td id="posicao3" onclick="jogar(0, 2, 'posicao3')"></td>
+            </tr>
+            <tr>
+                <td id="posicao4" onclick="jogar(1, 0, 'posicao4')"></td>
+                <td id="posicao5" onclick="jogar(1, 1, 'posicao5')"></td>
+                <td id="posicao6" onclick="jogar(1, 2, 'posicao6')"></td>
+            </tr>
+            <tr>
+                <td id="posicao7" onclick="jogar(2, 0, 'posicao7')"></td>
+                <td id="posicao8" onclick="jogar(2, 1, 'posicao8')"></td>
+                <td id="posicao9" onclick="jogar(2, 2, 'posicao9')"></td>
+            </tr>
+        </table>
+    </main>
+
+    <footer>
+        <p>&copy;<a href="https://github.com/SchaidtP" target="_blank">SchaidtP</a></p>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>
