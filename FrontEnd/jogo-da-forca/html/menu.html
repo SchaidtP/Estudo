@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css">
+    <title>Jogo da Forca</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Jogo da Forca</h1>
+        </header>
+    
+        <main>
+            <div class="informacao">
+                <label for="dica">Dica:</label>
+                <input type="text" placeholder="Ex: Nome de pessoa" id="dica">
+            </div>
+            <div class="informacao">
+                <label for="palavra_secreta">Palavra secreta:</label>
+                <div class="mostrar_senha">
+                    <input type="password" placeholder="Ex: Schaidt" id="palavra_secreta">
+                    <button id="btn-palavra-secreta"><i class="mdi mdi-eye-off-outline"></i></button>
+                </div>               
+            </div>
+            <button class="btn-jogar">Jogar</button>
+        </main>
+    </div>   
+    <footer>
+        <p>&copy;<a href="https://github.com/SchaidtP" target="_blank">SchaidtP</a></p>
+    </footer>
+    <script src="../js/menu.js"></script>
+</body>
+</html>

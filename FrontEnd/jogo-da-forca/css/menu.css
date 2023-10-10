@@ -1,0 +1,167 @@
+@font-face {
+    font-family: Bebas Neue;
+    src: url(../fonts/BebasNeue-Regular.ttf) format(truetype);
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: start;
+    background-color: #0F0F0F;
+    color: white;   
+    width: 100vw;
+    height: 100vh;
+}
+
+div.container {
+    background-color: white;
+    color: #0F0F0F;
+    margin-top: 3rem;
+    display: flex;
+    flex-flow: column wrap;
+    height: 55%;
+    width: 28%;
+    border-radius: 1rem;
+}
+
+header {
+    text-align: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+header h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 4px;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+    font-size: 35px;
+}
+
+main {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+.informacao {
+    display: flex;
+    flex-flow: column wrap;
+    margin-bottom: 2rem;
+}
+
+.informacao label {
+    font-size: 1.1rem;
+    font-style: oblique;
+    font-weight: bold;
+}
+
+.informacao input {
+    width: 13rem;
+    height: 2rem;
+    padding: 0 0.3rem;
+    border-radius: 4px;
+    border: 1px solid black;
+}
+
+.informacao #dica:focus {
+    outline: none;
+    border: 2px solid #005B41;
+    color: #008170;
+}
+
+.mostrar_senha{
+    display: flex;
+    flex-flow: row;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+.mostrar_senha input {
+    margin: 0;
+    width: 10rem;
+    border: none;   
+}
+
+.mostrar_senha input:focus {
+    outline: none;
+    color: #008170;
+}
+
+.mostrar_senha:focus-within {
+    outline: none;
+    border: 2px solid #005B41;
+}
+
+.mostrar_senha button {
+    margin: 0.001px;
+    padding: 0;
+    width: 3rem;
+    border: none;
+    background-color: #008170;
+    color: #232D3F;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.mostrar_senha button:hover {
+    color: white;
+}
+
+.mostrar_senha:focus-within button {
+    background-color: #0F0F0F;
+    color: #008170;
+}
+
+.mostrar_senha:focus-within button:hover {
+    color: white;
+}
+
+.btn-jogar {
+    border: 1px solid #008170;
+    border-radius: 1rem;
+    box-shadow: 1px 1px 1px #008170;
+    padding: 0.5rem 1.2rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    background-color: #232D3F;
+    color: #008170;
+    transition-duration: 0.6s;
+}
+
+.btn-jogar:hover {
+    border-color: #232D3F;
+    background-color: #008170;
+    color: #232D3F;
+    box-shadow: 1px 1px 1px #232D3F;
+}
+
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.6rem;
+    background-color: white;
+    color: #0F0F0F;
+    text-align: center;
+}
+
+footer p, footer a {
+    color: #0F0F0F;
+    font-size: 1.1rem;
+    text-decoration: none;
+    font-weight: bold;
+    font-style: italic;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

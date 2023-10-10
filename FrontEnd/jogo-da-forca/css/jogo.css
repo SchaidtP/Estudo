@@ -1,0 +1,141 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-flow: column wrap;
+    width: 100vw;
+    height: 100vh;
+}
+
+header {
+    text-align: center;
+    background-color: #0F0F0F;
+    color: white;
+    width: 100%;
+    height: 10%;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+}
+
+.container {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    height: 80%;
+    background-color: #008170;
+    color: #232D3F;
+}
+
+.container section {
+    width: 40%;
+    height: 100%;
+}
+
+.container section img {
+    height: 100%;
+    width: auto;
+}
+
+.container main {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.container main .letra-selecionada {
+    display: flex;
+    flex-flow: column wrap;
+    margin-top: 10%;
+    margin-left: 13.5%;
+}
+
+.letra-selecionada label {
+    font-size: 2rem;
+    font-weight: bold;
+    font-style: italic;
+    color: #0F0F0F;
+}
+
+.letra-selecionada input {
+    padding: 10px;
+    width: 15rem;
+    height: 2rem;
+    font-size: 1rem;
+    border: 2px solid #232D3F;
+    border-radius: 15px;
+    text-align: center;
+    background-color: #008170;
+    color: #232D3F;
+}
+
+.letra-selecionada input::placeholder {
+    color: #232323a4;
+}
+
+.letra-selecionada input:focus {
+    outline: none;
+    border-color: white;
+}
+
+
+main h2, main p {
+    margin-left: 15%;
+}
+
+main #palavra {
+    margin: 10% 0 10% 15%;
+    font-size: 2.2rem;
+    letter-spacing: 0.8rem;
+    font-weight: bold;
+    color: #0F0F0F;
+}
+
+.letras-ja-selecionadas h2 {
+    font-size: 1.6rem;
+    color: #0F0F0F;
+}
+
+.letras-ja-selecionadas p {
+    font-size: 1.3rem;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+    background-color: #0F0F0F;
+    color: white;
+    text-align: center;
+}
+
+footer p, footer a {
+    color: white;
+    font-size: 1.1rem;
+    text-decoration: none;
+    font-weight: bold;
+    font-style: italic;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+div.vencedor {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    background-color: #0F0F0F;
+    font-weight: bold;
+    color: white;
+}
