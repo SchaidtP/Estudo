@@ -5,9 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Compras</title>
     <link rel="stylesheet" href="style.css">
-    <script src="main.js"></script>
+    <link rel="stylesheet" href="mediaQuery.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css">
 </head>
 <body>
-    
+    <header>
+        <h1>Lista de Compras</h1>
+    </header>
+
+    <section>
+        <div class="add-produto">
+            <input type="text" placeholder="Produto" id="produto">
+            <input type="number" placeholder="Quantidade" id="quantidade">
+            <select id="unidade">
+                <option disabled selected>Unidade de medida</option>
+                <option value="kg">Quilogramas (kg)</option>
+                <option value="g">Gramas (g)</option>
+                <option value="L">Litros (L)</option>
+                <option value="mL">Mililitros (mL)</option>
+                <option value="Un">Unidade (Un)</option>
+            </select>
+            <button class="btn-add-produto"><i class="mdi mdi-basket-plus-outline"></i></button>
+        </div>
+    </section>
+
+    <main>
+        <div class="lista-de-compras">
+            <ul></ul>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy;<a href="https://github.com/SchaidtP" target="_blank">SchaidtP</a></p>
+    </footer>
+    <script src="main.js"></script>
 </body>
 </html>

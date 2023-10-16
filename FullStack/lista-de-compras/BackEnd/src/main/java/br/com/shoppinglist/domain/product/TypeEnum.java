@@ -8,7 +8,7 @@ public enum TypeEnum {
     GRAMA("g"),
     LITRO("L"),
     MILILITRO("mL"),
-    QUANTIDADE("Qt");
+    UNIDADE("Un");
 
     private String code;
     private static final Map<String, TypeEnum> getType = new HashMap<>();
