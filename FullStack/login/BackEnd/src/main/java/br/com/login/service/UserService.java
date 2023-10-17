@@ -39,7 +39,7 @@ public class UserService implements IUserService{
                 return userInvalid;
             }
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(userInvalid);
         }
     }
 

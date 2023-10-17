@@ -31,8 +31,9 @@ public class SecurityConfigurations {
                 .csrf(csrf -> csrf.disable())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(authorize -> authorize
+                        .requestMatchers(HttpMethod.GET, "api/v1/user/users").hasAuthority("ROLE_USER")
                         .requestMatchers(
-                                "/api/v1/user"
+                                "/api/v1/user/**"
                         ).permitAll()
                         .anyRequest().authenticated()
                 )
