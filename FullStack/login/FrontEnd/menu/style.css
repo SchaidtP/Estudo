@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+body {
+    background: rgb(20,30,70);
+    background: linear-gradient(135deg, rgba(20,30,70,1) 9%, rgba(18,41,134,1) 50%, rgba(17,48,172,1) 80%);
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: start;
+}
+
+header {
+    flex: 10%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #FFF5E0;
+    color: #C70039;
+    padding: 0;
+}
+
+header h1 {
+    flex: 90%;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    font-size: 3rem;
+    letter-spacing: 5px;
+}
+
+main {
+    flex: 75%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+main .lista {
+    display: flex;
+    margin: 10px 0px;
+    background-color: #FF6969;
+    border-radius: 3rem;
+    width: 20rem;
+    height: 100%;
+    overflow-y: hidden;
+}
+
+.lista ul {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    overflow-y: scroll;
+    padding: 0;
+    margin: 0;
+}
+
+ul::-webkit-scrollbar {
+    width: 10px;
+    background-color: #FFF5E0;
+    border-radius: 10px;
+}
+
+ul::-webkit-scrollbar-thumb {
+    background-color: #C70039;
+    border-radius: 10px;
+}
+
+ul::-webkit-scrollbar-button {
+    display: none; /* Para ocultar as setas de navegação */
+}
+
+ul li {
+    border-bottom: 1px solid black;
+    list-style-type: none;
+    margin: 0rem 1rem;
+}
+
+span {
+    color: #FFF5E0;
+}
+
+span.username {
+    color: #141E46;
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+    font-weight: bold;
+}
+
+footer {
+    flex: 5%;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    background-color: #FFF5E0;
+    color: #C70039;
+    text-align: center;
+}
+
+footer a {
+    color: #C70039;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer button {
+    background-color: red;
+    border: none;
+    color: #FFF5E0;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+footer button:hover {
+    background-color: rgb(153, 2, 2);
+}

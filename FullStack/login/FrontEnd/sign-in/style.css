@@ -1,0 +1,115 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+body {
+    background: rgb(20,30,70);
+    background: linear-gradient(135deg, rgba(20,30,70,1) 9%, rgba(18,41,134,1) 50%, rgba(17,48,172,1) 80%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    position: relative;
+    flex-flow: column wrap;
+    background-color: #fff5e0;
+    border-radius: 1rem;
+    box-shadow: rgba(255, 255, 255, 0.25) 0px 25px 50px -12px;
+    width: 30rem;
+    height: 25rem;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+header h1 {
+    color: #C70039;
+}
+
+main {
+    display: flex;
+    flex-flow: column wrap;
+    justify-items: center;
+    align-items: center;
+    padding: 0 3rem;
+}
+
+main input {
+    text-align: center;
+    margin-bottom: 1rem;
+    width: 22rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    border: 1px solid #141E46;
+    background-color: #FF6969;
+    color: #FFF5E0;
+}
+
+input:focus {
+    background-color: #C70039;
+    color: #FFF5E0;
+}
+
+input:focus::placeholder {
+    color: #FFF5E0;
+}
+
+main button {
+    text-align: center;
+    margin-top: 2rem;
+    width: 15rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    border: 1px solid #141E46;
+    background-color: #141E46;
+    color: #FFF5E0;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+main button:hover {
+    background-color: #C70039;
+    color: #141E46;
+}
+
+main input:focus {
+    outline: none;
+}
+
+.mensagem-erro {
+    text-align: center;
+    margin-top: 2rem;
+    color: #ff0000;
+}
+
+footer {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+footer p, footer a {
+    color: #141E46;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #C70039;
+    text-decoration: underline;
+}
+
